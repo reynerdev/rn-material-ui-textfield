@@ -1,6 +1,6 @@
 {
-  "name": "rn-material-ui-textfield",
-  "version": "1.0.5",
+  "name": "saphi-material-ui-textfield",
+  "version": "1.0.3",
   "license": "BSD-3-Clause",
   "contributors": [
     "Gabriel Donadel Dall'Agnol <gabrieldallagnol@outlook.com>",
@@ -37,7 +37,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/gabrieldonadel/rn-material-ui-textfield.git"
+    "url": "git://github.com/reynerdev/rn-material-ui-textfield.git"
   },
   "dependencies": {
     "prop-types": "^15.5.9"

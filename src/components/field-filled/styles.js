@@ -5,6 +5,6 @@ export default StyleSheet.create({
     borderTopLeftRadius: 4,
     borderTopRightRadius: 4,
 
-    backgroundColor: 'rgb(204, 204, 204)',
+    backgroundColor: 'transparent',
   },
 })

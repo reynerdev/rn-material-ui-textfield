@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import {ScrollView, View, SafeAreaView, Platform, Text} from 'react-native';
-import {TextField} from 'rn-material-ui-textfield';
+import React, { Component } from 'react';
+import { ScrollView, View, SafeAreaView, Platform, Text } from 'react-native';
+import { TextField } from 'saphi-material-ui-textfield';
 
 let styles = {
   scroll: {
@@ -9,7 +9,7 @@ let styles = {
 
   container: {
     margin: 8,
-    marginTop: Platform.select({ios: 8, android: 32}),
+    marginTop: Platform.select({ ios: 8, android: 32 }),
     flex: 1,
   },
 
@@ -65,7 +65,7 @@ class App extends Component {
   }
 
   onFocus() {
-    let {errors = {}} = this.state;
+    let { errors = {} } = this.state;
 
     for (let name in errors) {
       let ref = this[name];
@@ -75,21 +75,21 @@ class App extends Component {
       }
     }
 
-    this.setState({errors});
+    this.setState({ errors });
   }
 
   onChangeText(text) {
     ['firstname', 'lastname', 'about', 'email', 'password']
-      .map((name) => ({name, ref: this[name]}))
-      .forEach(({name, ref}) => {
+      .map((name) => ({ name, ref: this[name] }))
+      .forEach(({ name, ref }) => {
         if (ref.isFocused()) {
-          this.setState({[name]: text});
+          this.setState({ [name]: text });
         }
       });
   }
 
   onAccessoryPress() {
-    this.setState(({secureTextEntry}) => ({
+    this.setState(({ secureTextEntry }) => ({
       secureTextEntry: !secureTextEntry,
     }));
   }
@@ -129,7 +129,7 @@ class App extends Component {
       }
     });
 
-    this.setState({errors});
+    this.setState({ errors });
   }
 
   updateRef(name, ref) {
@@ -137,7 +137,7 @@ class App extends Component {
   }
 
   renderPasswordAccessory() {
-    let {secureTextEntry} = this.state;
+    let { secureTextEntry } = this.state;
 
     let name = secureTextEntry ? 'visibility' : 'visibility-off';
 
@@ -145,8 +145,8 @@ class App extends Component {
   }
 
   render() {
-    let {errors = {}, secureTextEntry, ...data} = this.state;
-    let {firstname, lastname} = data;
+    let { errors = {}, secureTextEntry, ...data } = this.state;
+    let { firstname, lastname } = data;
 
     let defaultEmail = `${firstname || 'name'}@${lastname || 'house'}.com`
       .replace(/\s+/g, '_')

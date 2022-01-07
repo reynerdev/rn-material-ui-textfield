@@ -15,6 +15,7 @@ export default class Label extends PureComponent {
     numberOfLines: PropTypes.number,
 
     disabled: PropTypes.bool,
+    disabledColor: PropTypes.string,
     restricted: PropTypes.bool,
 
     fontSize: PropTypes.number.isRequired,
@@ -55,6 +56,7 @@ export default class Label extends PureComponent {
       errorColor,
       baseColor,
       tintColor,
+      disabledColor,
       style,
       focusAnimation,
       labelAnimation,
@@ -65,8 +67,9 @@ export default class Label extends PureComponent {
       return null
     }
 
-    let color = disabled
-      ? baseColor
+    let color = disabled ?
+       disabledColor
+      : baseColor ? baseColor
       : restricted
       ? errorColor
       : focusAnimation.interpolate({
